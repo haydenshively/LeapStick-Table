@@ -13,8 +13,8 @@ public class LeapStick {
 	public static NetworkTable gunnerTable;
 	public static void main(String[] args) {
 		NetworkTable.setClientMode();
-		NetworkTable.setIPAddress("10.42.56.2");
-		NetworkTable.globalDeleteAll();
+		NetworkTable.setTeam(4256);
+		//NetworkTable.globalDeleteAll();
 		gunnerTable = NetworkTable.getTable("gunnerTable");
         //Create a listener and controller
 		Controller leapGun = new Controller();
