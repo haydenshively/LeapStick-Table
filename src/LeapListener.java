@@ -11,21 +11,21 @@ import com.leapmotion.leap.Vector;
 public class LeapListener extends Listener{
 	private static final Vector vector = new Vector(1.0f, 1.0f, 1.0f);
 	public void onInit(Controller controller) {
-        LeapStick.gunnerTable.putBoolean("a Initialized?", true);
+        LeapStick.sender.putBoolean("a Initialized?", true);
     }
 
     public void onConnect(Controller controller) {
         controller.enableGesture(Gesture.Type.TYPE_CIRCLE);
-        LeapStick.gunnerTable.putBoolean("b Connected?", true);
+        LeapStick.sender.putBoolean("b Connected?", true);
     }
 
     public void onDisconnect(Controller controller) {
         //Note: not dispatched when running in a debugger.
-        LeapStick.gunnerTable.putBoolean("b Connected?", false);
+        LeapStick.sender.putBoolean("b Connected?", false);
     }
 
     public void onExit(Controller controller) {
-        LeapStick.gunnerTable.putBoolean("a Initialized?", false);
+        LeapStick.sender.putBoolean("a Initialized?", false);
     }
 
     public void onFrame(Controller controller) {
@@ -71,18 +71,18 @@ public class LeapListener extends Listener{
         }
         
         
-        LeapStick.gunnerTable.putNumber("c Hand count", frame.hands().count());
-        LeapStick.gunnerTable.putString("d Current hand", handType);
-        LeapStick.gunnerTable.putNumber("e Tracking confidence", handConfidence);
-        LeapStick.gunnerTable.putNumber("f Palm pitch", palmPitch);
-        LeapStick.gunnerTable.putNumber("g Palm yaw", palmYaw);
-        LeapStick.gunnerTable.putNumber("h Palm roll", palmRoll);
-        LeapStick.gunnerTable.putNumber("i Palm x", palmX);
-        LeapStick.gunnerTable.putNumber("j Palm y", palmY);
-        LeapStick.gunnerTable.putNumber("k Palm height", palmHeight);
-        LeapStick.gunnerTable.putBoolean("l Grabbing?", handGrabbing);
-        LeapStick.gunnerTable.putBoolean("m Pinching?", handPinching);
-        LeapStick.gunnerTable.putString("n Circle gesture", circleDirection);
-        LeapStick.gunnerTable.putNumber("o Circle duration", circleDuration);
+        LeapStick.sender.putNumber("c Hand count", frame.hands().count());
+        LeapStick.sender.putString("d Current hand", handType);
+        LeapStick.sender.putNumber("e Tracking confidence", handConfidence);
+        LeapStick.sender.putNumber("f Palm pitch", palmPitch);
+        LeapStick.sender.putNumber("g Palm yaw", palmYaw);
+        LeapStick.sender.putNumber("h Palm roll", palmRoll);
+        LeapStick.sender.putNumber("i Palm x", palmX);
+        LeapStick.sender.putNumber("j Palm y", palmY);
+        LeapStick.sender.putNumber("k Palm height", palmHeight);
+        LeapStick.sender.putBoolean("l Grabbing?", handGrabbing);
+        LeapStick.sender.putBoolean("m Pinching?", handPinching);
+        LeapStick.sender.putString("n Circle gesture", circleDirection);
+        LeapStick.sender.putNumber("o Circle duration", circleDuration);
     }
 }

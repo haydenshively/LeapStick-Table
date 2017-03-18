@@ -10,12 +10,12 @@ import edu.wpi.first.wpilibj.networktables.NetworkTable;
  * Pinching could be used for any other function, but it can only be activated while not grabbing.
 **/
 public class LeapStick {
-	public static NetworkTable gunnerTable;
+	public static NetworkTable sender;
 	public static void main(String[] args) {
 		NetworkTable.setClientMode();
 		NetworkTable.setTeam(4256);
 		//NetworkTable.globalDeleteAll();
-		gunnerTable = NetworkTable.getTable("gunnerTable");
+		sender = NetworkTable.getTable("LeapStick");
         //Create a listener and controller
 		Controller leapGun = new Controller();
 		//Allow background frame processing
